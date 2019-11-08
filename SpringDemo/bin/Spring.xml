@@ -10,14 +10,14 @@
    <!-- For Global Declaration of init and destroy include the below line
    default-init-method="myInit" default-destroy-method="cleanUp"
    > -->
-   
+  <!--**************************** Basics**************************************************************** --> 
    <!-- <bean id="newMessage" class="com.testSpring.HelloWorld">
    <property name = "myMessage" value = "This is a Spring Text......"/>
    </bean>
    <bean id="helloHussain" class="com.testSpring.HelloWorld">
    <property name="myMessage" value="Hi Hussain Welcome to Spring World"/>
    </bean> -->
-   
+   <!-- ***************************Constructor ************************************************************-->
    <!-- <bean id="newMessage" class="com.testSpring.HelloWorld">
    <constructor-arg name = "myMessage" value = "This is a Spring Text......"/>
    </bean>
@@ -42,7 +42,7 @@
    <constructor-arg type="java.lang.String" value="Hi Hussain Welcome to Spring World"/>
    <constructor-arg type="int" value="21"/>
    </bean> -->
-   
+
  <!--   <bean id="newMessage" class="com.testSpring.HelloWorld">
    <constructor-arg index="0" value = "This is a Spring Text......"/>
    <constructor-arg index="1" value = "21"/>
@@ -51,9 +51,8 @@
    <constructor-arg index="0" value="Hi Hussain Welcome to Spring World"/>
    <constructor-arg index="1" value="21"/>
    </bean> -->
-   
-   
-  <!--  <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
+  <!-- ***************************************Referencing Beans**************************************************** -->
+   <!--  <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
    <property name="pointA" ref="zeroPoint"/>
    <property name="pointB" ref="Point2"/>
    <property name="pointC" ref="Point3"/>   
@@ -71,7 +70,7 @@
    <property name="x" value="0"/>
    <property name="y" value="-20"/>
    </bean> -->
-   <!--  ISOLATING A BEAN(Inner Bean) & Alias -->
+   <!-- ********************************* ISOLATING A BEAN(Inner Bean) & Alias *******************************-->
     <!-- <bean id="zeroPoint" class="com.testSpring.Point">
    <property name="x" value="0"/>
    <property name="y" value="0"/>
@@ -94,7 +93,7 @@
     
    <alias name="getTrianglePoints" alias="triangle"/> -->
    
-   <!-- Collections -->
+   <!-- *****************************Collections *****************************-->
     <!-- <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
    <property name="listOfPoints" >
    <list>
@@ -115,24 +114,21 @@
    
    <bean id="zeroPoint" class="com.testSpring.Point">
    <property name="x" value="0"/>
-   <property name="y" value="0"/>  </bean> -->
- <!-- To Declare Scope of beans
- <bean id="getTrianglePoints" class="com.testSpring.HelloWorld" scope="singelton">
+   <property name="y" value="0"/>
+     </bean> -->
+  <!--*************************** To Declare Scope of beans****************************-->
+ <!-- <bean id="getTrianglePoints" class="com.testSpring.HelloWorld" scope="singelton">
 	   </bean>     
 	 <bean id="getTrianglePoints" class="com.testSpring.HelloWorld" scope="prototype">
 	   </bean>     
  -->
- 
- 
- 
-  <!-- Inheritance - Normal Property -->
+  <!--******************** Inheritance - Normal Property *******************-->
    <!-- <bean id="getTrianglePoints" class="com.testSpring.HelloWorld" autowire="byName">
 	   </bean>     
     <bean id="pointA" class="com.testSpring.Point">
    <property name="x" value="0"/>
    <property name="y" value="0"/> 
     </bean>
-  
   <bean id="pointB" class="com.testSpring.Point">
    			<property name="x" value="20"/>
    			<property name="y" value="0"/>
@@ -141,8 +137,7 @@
    			<property name="x" value="0"/>
 		    <property name="y" value="-20"/>
         </bean> -->
-        
-        <!-- <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
+ <!-- <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
 	   <property name="pointA" ref="pointA"/>	   
 	   </bean>     
 	   <bean id="triangle1" class="com.testSpring.HelloWorld" parent="getTrianglePoints">
@@ -167,7 +162,7 @@
 		    <property name="y" value="-20"/>
         </bean>
     -->
-    <!-- Inheritance-Collection -->
+  <!-- *************************Inheritance-Collection *********************-->
    <!--  <bean id="getTrianglePoints" class="com.testSpring.HelloWorld"> 
 	   <property name="listOfPoints">
 	   <list>
@@ -179,7 +174,6 @@
 	   <property name="listOfPoints">
 	   <list merge="true">
 	   <ref bean="pointB"/>
- 
 	   </list>	   
 	   </property>
 	   </bean>
@@ -190,10 +184,7 @@
 	   </list>	   
 	   </property>
 	   </bean>
-	   
-
-	   
-    <bean id="pointA" class="com.testSpring.Point">
+	<bean id="pointA" class="com.testSpring.Point">
    <property name="x" value="0"/>
    <property name="y" value="0"/> 
     </bean>
@@ -206,7 +197,7 @@
    			<property name="x" value="0"/>
 		    <property name="y" value="-20"/>
         </bean> -->
- <!-- Init-Destroy Method for each bean -->
+ <!-- ***********************Init-Destroy Method for each bean *******************-->
 <!--  <bean id="getTrianglePoints" class="com.testSpring.HelloWorld" init-method="myInit" destroy-method="cleanUp"> 
 	   <property name="listOfPoints">
 	   <list>
@@ -244,7 +235,7 @@
 		    <property name="y" value="-20"/>
         </bean> -->
  
- <!-- Global Declaration of Init & Destroy Method -->
+ <!--*** Global Declaration of Init & Destroy Method(Check <beans> Definition) *************-->
 <!--  <bean id="getTrianglePoints" class="com.testSpring.HelloWorld" > 
 	   <property name="listOfPoints">
 	   <list>
@@ -256,7 +247,6 @@
 	   <property name="listOfPoints">
 	   <list merge="true">
 	   <ref bean="pointB"/>
- 
 	   </list>	   
 	   </property>
 	   </bean>
@@ -266,10 +256,7 @@
 	   <ref bean="pointC"/>   
 	   </list>	   
 	   </property>
-	   </bean>
-	   
-
-	   
+	   </bean>   
     <bean id="pointA" class="com.testSpring.Point">
    <property name="x" value="0"/>
    <property name="y" value="0"/> 
@@ -283,9 +270,9 @@
    			<property name="x" value="0"/>
 		    <property name="y" value="-20"/>
         </bean>
- <bean class="com.testSpring.DisplayBeanNamePostProcessor"/> -->
+ -->
    
-   <!-- BeanPostProcessor -->
+<!--****************************** BeanPostProcessor **********************-->
 <!--     <bean id="getTrianglePoints" class="com.testSpring.HelloWorld" > 
 	   <property name="listOfPoints">
 	   <list>
@@ -297,7 +284,6 @@
 	   <property name="listOfPoints">
 	   <list merge="true">
 	   <ref bean="pointB"/>
- 
 	   </list>	   
 	   </property>
 	   </bean>
@@ -323,7 +309,7 @@
 		    <property name="y" value="-20"/>
         </bean>
  <bean class="com.testSpring.DisplayBeanNamePostProcessor"/> -->
- <!-- Bean Factory Post Processor -->
+ <!-- *******************Bean Factory Post Processor******************************* -->
 <!--  
  <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
    <property name="pointA" ref="pointA"/>
@@ -345,7 +331,7 @@
    </bean> 
    <bean class="com.testSpring.DisplayBeanFactoryPP"></bean>
  --> 
-<!-- Property placeholder confirgurer -->
+<!--******************* Property placeholder confirgurer *********************-->
  
 <!--  <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
    <property name="pointA" ref="pointA"/>
@@ -369,14 +355,12 @@
    <property name="locations" value="pointconfigPropertyFile.properties">
    </property>
    </bean> -->
-<!-- 	Coding to Interface -->
-	
+<!--****************************Coding to Interface ************************-->
 <!--    <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
    <property name="pointA" ref="pointA"/>
    <property name="pointB" ref="pointB"/>
    <property name="pointC" ref="pointC"/>   
    </bean>
-   
    <bean id="pointA" class="com.testSpring.Point">
    <property name="x" value="0"/>
    <property name="y" value="0"/>
@@ -389,19 +373,15 @@
    <property name="x" value="0"/>
    <property name="y" value="-20"/>
    </bean> 
- 
-	<bean id="getCirclePoints" class="com.testSpring.Circle">
+ <bean id="getCirclePoints" class="com.testSpring.Circle">
 	<property name="center" ref="pointA"/>
 	</bean>	 -->
-<!-- 	 
-	 Required Annotation -->
-	 
-	   <!--  <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
+<!-- ********************* Required Annotation *******************************-->
+<!--  <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
    <property name="pointA" ref="pointA"/>
    <property name="pointB" ref="pointB"/>
    <property name="pointC" ref="pointC"/>   
    </bean>
-   
    <bean id="pointA" class="com.testSpring.Point">
    <property name="x" value="0"/>
    <property name="y" value="0"/>
@@ -420,8 +400,8 @@
 	</bean>	
 	
 	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/> -->
-	<!-- Autowired annotation when one object of a type is related -->
-<!-- 	  <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
+<!-- ********** Autowired annotation when one object of a type is related(Autowire by Type) *******-->
+<!-- <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
    <property name="pointA" ref="pointA"/>
    <property name="pointB" ref="pointB"/>
    <property name="pointC" ref="pointC"/>   
@@ -431,6 +411,7 @@
    <property name="x" value="0"/>
    <property name="y" value="0"/>
    </bean>
+ // The Two beans Below Are in Comments
    <bean id="pointB" class="com.testSpring.Point">
    <property name="x" value="20"/>
    <property name="y" value="0"/>
@@ -438,14 +419,14 @@
    <bean id= "pointC" class="com.testSpring.Point">
    <property name="x" value="0"/>
    <property name="y" value="-20"/>
-   </bean> 
+   </bean>  
  
 	<bean id="getCirclePoints" class="com.testSpring.Circle">
 	
 	</bean>	
 	
 	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>--> 
-<!-- Autowired when Multiple Points are there(it is then chosen by id match) -->	
+<!-- Autowired when Multiple Points are there(it is then chosen by id match)Autowire by name -->	
 <!-- 	  <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
    <property name="pointA" ref="center"/>
    <property name="pointB" ref="pointB"/>
@@ -470,7 +451,7 @@
 	</bean>	
 	
 	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/> -->
-<!-- Autowired and Qualifier -->
+<!--********************* Autowired and Qualifier *****************************-->
 <!--  <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
    <property name="pointA" ref="pointA"/>
    <property name="pointB" ref="pointB"/>
@@ -495,17 +476,19 @@
 	
 	</bean>	 -->
 	
-	<!-- JSR-250 Annotations (Java Specification Request) -->
-	<!-- @Resource -->
+<!--***************JSR-250 Annotations (Java Specification Request)********* -->
+<!--**************************** @Resource **********************************-->
 <!-- 	 <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
-   Refer Comment section in bean name=getCirclePoints <property name="pointA" ref="pointA"/>
-   <property name="pointA" ref="center"/>
+   Refer Comment section in bean name=getCirclePoints 
+case:1 <property name="pointA" ref="pointA"/> 
+case:2<property name="pointA" ref="center"/>
    <property name="pointB" ref="pointB"/>
    <property name="pointC" ref="pointC"/>   
    </bean> 
    <context:annotation-config/>
-   Refer Comment section in bean name=getCirclePoints <property name="pointA" ref="pointA"/>  <bean id="pointA" class="com.testSpring.Point">
-    <bean id="center" class="com.testSpring.Point"> 
+   Refer Comment section in bean name=getCirclePoints 
+case 1:<bean id="pointA" class="com.testSpring.Point">
+case 2:<bean id="center" class="com.testSpring.Point"> 
    <property name="x" value="0"/>
    <property name="y" value="0"/>
    </bean>
@@ -519,11 +502,11 @@
    </bean>  
  
 	<bean id="getCirclePoints" class="com.testSpring.Circle">
-	If resource is present with arguments it will try to match the bean name
+	If resource is present with arguments it will try to match the bean name(case 1)
 	else if not there it will smartly check for the member variable name of class
-	with the bean definations over here
+	with the bean definations over here(Case 2)
 	</bean>	 -->
-	<!-- Init(@PostConstruct)-(@PreDestroy)Destroy Annotations -->
+	<!--************* Init(@PostConstruct)-(@PreDestroy)Destroy Annotations ********* -->
 	<!-- <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
    
    <property name="pointA" ref="center"/>
@@ -547,8 +530,30 @@
 	<bean id="getCirclePoints" class="com.testSpring.Circle"/>
 	 -->
 	 
-	 <!-- @Component Annotation -->
-	 <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
+	 <!--***************** @Component Annotation ***********************************-->
+<!-- <bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
+   
+   <property name="pointA" ref="center"/>
+   <property name="pointB" ref="pointB"/>
+   <property name="pointC" ref="pointC"/>   
+   </bean> 
+   <context:annotation-config/>
+   <bean id="center" class="com.testSpring.Point"> 
+   <property name="x" value="0"/>
+   <property name="y" value="0"/>
+   </bean>
+    <bean id="pointB" class="com.testSpring.Point">
+   <property name="x" value="20"/>
+   <property name="y" value="0"/>
+   </bean>
+   <bean id= "pointC" class="com.testSpring.Point">
+   <property name="x" value="0"/>
+   <property name="y" value="-20"/>
+   </bean>  
+ 
+	<context:component-scan base-package="com.testSpring" /> -->
+	<!-- ************************Message Source **********************************-->
+	<bean id="getTrianglePoints" class="com.testSpring.HelloWorld">
    
    <property name="pointA" ref="center"/>
    <property name="pointB" ref="pointB"/>
@@ -569,6 +574,11 @@
    </bean>  
  
 	<context:component-scan base-package="com.testSpring" />
-		
-	
-   </beans>
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+			<value>pointconfigPropertyFile</value>
+			</list>
+		</property>
+	</bean>
+		</beans>

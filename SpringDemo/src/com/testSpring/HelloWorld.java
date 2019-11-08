@@ -21,7 +21,6 @@ public int age;*/
 	return myMessage;
 }
 */
-
 /*
 public void setMyMessage(String myMessage) {
 	this.myMessage = myMessage;
@@ -31,8 +30,6 @@ public void setMyMessage(String myMessage) {
 	super();
 	this.myMessage = myMessage;
 }
-
-
 public HelloWorld(String myMessage, int age) {
 	super();
 	this.myMessage = myMessage;
@@ -66,6 +63,7 @@ public String sendmsg(){
 	public void setPointC(Point pointC) {
 		this.pointC = pointC;
 	}
+
 	public String display(){
 		String str="Point A -> x= "+pointA.getX()+" y= "+pointA.getY()+
 				"\nPoint B -> x= "+pointB.getX()+" y= "+pointB.getY()+
@@ -91,17 +89,26 @@ public String sendmsg(){
 		
 	}
 
-	@Override
+	@Override ----Methods Of Interface Application Context Aware--Will Get Called automatically
 	public void afterPropertiesSet() throws Exception {
 	System.out.println("Calling the init method");
 	}
 	
 
-	@Override
+	@Override ----Methods Of Interface Application Context Aware--Will Get Called automatically
 	public void destroy() throws Exception {
 	System.out.println("Destroying the bean");
 		
-	}*/
+	}
+	---Custom Way of Calling Init Method
+	public void myInit(){
+	System.out.println("Calling the Custom initializing Method");
+    }
+    ---Custom Way of Calling Destroy Method
+public void cleanUp(){
+	System.out.println("Calling the Custom disposable Method");
+}
+	*/
 /*public class HelloWorld {
 	List<Point> listOfPoints=new ArrayList<>();
 
@@ -120,11 +127,6 @@ public String sendmsg(){
 		
 	}
 
-public void myInit(){
-	System.out.println("Calling the Custom initializing Method");
-}
-public void cleanUp(){
-	System.out.println("Calling the Custom disposable Method");
-}
+
 	*/	
 

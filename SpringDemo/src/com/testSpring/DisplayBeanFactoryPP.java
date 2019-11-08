@@ -10,7 +10,5 @@ public class DisplayBeanFactoryPP implements BeanFactoryPostProcessor {
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanfactory)
 			throws BeansException {
 		System.out.println("Have Called Bean Factory Post Processor");
-		
 	}
-
 }
